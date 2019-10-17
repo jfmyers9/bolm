@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bolm/commands"
 	"fmt"
 	"os"
 )
@@ -8,7 +9,7 @@ import (
 func main() {
 	if err := commands.RootCmd.Execute(); err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %s\n", err.Error())
-		os.Exit(exitstatus.FromError(err))
+		os.Exit(1)
 	}
 
 	os.Exit(0)
